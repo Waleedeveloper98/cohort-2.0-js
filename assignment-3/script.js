@@ -186,19 +186,20 @@
 // }
 // console.log(`total remaining balance is ${totalBalance}`)
 
-let maxWithdrawals = 3;
-let balance = 1000;
+// let maxWithdrawals = 3;
+// let balance = 1000;
 
-for (let count = 0; count < maxWithdrawals; count++) {
-  let amount = +prompt("Enter amount to withdraw:");
+// for (let count = 0; count < maxWithdrawals; count++) {
+//   let amount = +prompt("Enter amount to withdraw:");
 
-  if (amount > balance) {
-    console.log("Not enough balance!");
-    break;
-  }
+//   if (amount > balance) {
+//     console.log("Not enough balance!");
+//     break;
+//   }
 
-  balance -= amount;
-  console.log(`You withdrew ${amount}. Remaining balance: ${balance}`);
-}
+//   balance -= amount;
+//   console.log(`You withdrew ${amount}. Remaining balance: ${balance}`);
+// }
 
-console.log(`Total remaining balance is ${balance}`);
+// console.log(`Total remaining balance is ${balance}`);
+
