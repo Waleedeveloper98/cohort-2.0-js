@@ -119,3 +119,126 @@
 //     }
 // }
 // console.log(sum);
+
+
+
+
+// Ask user for words until they type “stop”. Count how many times they typed “yes”
+// Loop until "stop" is typed. Count "yes".
+
+// let word = prompt("Enter a word");
+// let count = 0;
+// while (word !== "stop") {
+//     word = prompt("Enter a word")
+//     if (word === "stop") break
+//     if (word === "yes") count++
+// }
+// console.log(`you type ${count} times yes`)
+
+
+
+
+// Keep asking number until user enters an even number
+// Use while loop. Stop only if input is even.
+
+
+// let number = prompt("Enter a number")
+// while (number % 2 !== 0) {
+//     number = prompt("Enter a number")
+//     console.log("even")
+// }
+
+
+// Print numbers between two user inputs
+// Input start and end using prompt() → print all between.
+
+
+// let u1 = +prompt("Enter a number")
+// let u2 = +prompt("Enter a number")
+// if (u1 > u2) {
+//     console.error("first number must be less than second number")
+// }
+// for (let i = u1; i <= u2; i++) {
+
+//     console.log(i)
+// }
+
+
+//Print only first 3 odd numbers from 1 to 20
+// Use loop. Stop with break after 3 odd prints.
+
+// let count = 0;
+// for (let i = 1; i <= 20; i++) {
+//     if (i % 2 === 1) {
+//         count++
+//         console.log(i)
+//         if(count === 3)break
+//     }
+// }
+// console.log(count)
+
+
+// Ask user 5 numbers. Count how many are positive
+// Use loop + condition + counter.
+
+// let positiveCounter = 0;
+// let negativeCounter = 0;
+// let positiveNums = []
+// let negativeNums = []
+// let userNumbers = prompt("Enter 5 numbers with space")
+// if (userNumbers === null) {
+//     console.error("cancelled")
+// } else {
+//     userNumbers.split(" ").forEach((n) => {
+//         if (Number(n) > 0) {
+//             positiveCounter++
+//             positiveNums.push(n)
+//         } else {
+//             negativeCounter++
+//             negativeNums.push(n)
+//         }
+//     })
+//     console.log(`Total positive numbers : ${positiveCounter} and these are numbers ${positiveNums.join(",")}`)
+//     console.log(`Total positive numbers : ${negativeCounter} and these are numbers ${negativeNums.join(",")}`)
+// }
+
+
+
+// ATM Simulator – Allow 3 withdrawals
+// Start with ₹1000 balance. Ask withdrawal amount 3 times.
+// If enough balance → deduct
+// Else → print “Insufficient balance”
+
+
+let balance = 1000;
+let totalWithdrawals = 0;
+
+
+
+while (totalWithdrawals < 3) {
+    let withdrawalAmount = prompt(`Enter withdrawal amount your total balance is ${balance}`)
+    if (withdrawalAmount === null) {
+        console.error("You cancelled it")
+        break
+    }
+    else if (withdrawalAmount.trim() === "") {
+        console.error("Invalid amount.")
+        break
+    }
+    else if (isNaN(Number(withdrawalAmount))) {
+        console.error("Only numbers are valid")
+        break
+    }
+    else if (Number(withdrawalAmount) > balance) {
+        console.error("balance low!")
+        break
+    } else if (totalWithdrawals === 3) {
+        console.error("You can only 3 withdrawals in one day.")
+        break
+    }
+    else {
+        balance -= Number(withdrawalAmount)
+        totalWithdrawals++
+    }
+}
+console.log(`Your remaining balance is ${balance}`)
