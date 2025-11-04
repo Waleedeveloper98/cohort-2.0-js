@@ -232,7 +232,6 @@ while (totalWithdrawals < 3) {
     }
     else if (Number(withdrawalAmount) > balance) {
          alert(`Your remaining balance is ${balance} so enter amount under your balance limit`)
-        console.error("balance low!")
         continue
     } else if (totalWithdrawals === 3) {
         console.error("Your daily withdrawal limit is full")
