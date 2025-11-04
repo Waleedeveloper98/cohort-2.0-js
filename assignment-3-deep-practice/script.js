@@ -217,6 +217,7 @@ let totalWithdrawals = 0;
 
 while (totalWithdrawals < 3) {
     let withdrawalAmount = prompt(`Enter withdrawal amount your total balance is ${balance}`)
+    totalWithdrawals++
     if (withdrawalAmount === null) {
         console.error("You cancelled it")
         break
@@ -230,15 +231,15 @@ while (totalWithdrawals < 3) {
         break
     }
     else if (Number(withdrawalAmount) > balance) {
+         alert(`Your remaining balance is ${balance} so enter amount under your balance limit`)
         console.error("balance low!")
-        break
+        continue
     } else if (totalWithdrawals === 3) {
-        console.error("You can only 3 withdrawals in one day.")
+        console.error("Your daily withdrawal limit is full")
         break
     }
     else {
         balance -= Number(withdrawalAmount)
-        totalWithdrawals++
     }
 }
 console.log(`Your remaining balance is ${balance}`)
