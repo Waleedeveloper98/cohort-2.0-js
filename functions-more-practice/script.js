@@ -167,3 +167,93 @@
 // printA();
 // console.log(a);
 //answer: printA() print 20 aur log a print 10 because a = 10 is in global scope and a = 20 in function scope so both are different
+
+
+
+// LEVEL 2 — GUESS THE OUTPUT
+
+// var x = 1;
+// function printX() {
+//     console.log(x);
+// }
+// printX(); //1
+// var x = 5;
+// printX(); //5
+//answer: first wala x 1 print kre ga kyunk x global mein hai phir x update kia hai toh x 5 aaye ga kyuki var is fully hoisted
+
+
+// function sub(a, b) {
+//     const res = a - b;
+//     console.log("Result:", res);
+//     return res;
+// }
+// const v = sub(10, 3);
+// console.log(v);
+
+//answer: Result: 7 ,7 first console chale ga phir return res hai jo bhi answer ho ga res ka
+
+// function withDefault(a, b = 10){
+//   console.log(a + b);
+// }
+// withDefault(5);
+// withDefault(5, 2);
+//answer: 15,7 first wala default wali value le ga second wala args wali values ke ga
+
+
+// function sumAll(...nums){
+//   console.log(nums);
+//   return nums.reduce((s, n) => s + n, 0);
+// }
+// console.log(sumAll(1,2,3));
+// answer: nums full array print kre ga phir sumAll call kia hai 3 args se toh inka sum print kre ga jo hai 6
+
+
+// function firstTwo(a, b){
+//   console.log(a, b);
+// }
+// firstTwo(1,2,3,4);
+//answer: 1,2 print and baki ignore kr diye jye gy
+
+
+// function outer() {
+//     const a = 7;
+//     function inner() {
+//         console.log(a);
+//     }
+//     inner();
+//     return typeof inner;
+// }
+// console.log(outer());
+//answer: 7, function return kia hai toh call ko console mein likhe gy
+
+
+// function sayMsg() {
+//     const msg = "Hello!";
+//     return msg;
+// }
+// console.log(sayMsg());
+// console.log(typeof msg);
+//answer: andar return hai toh bahir console ho ga Hello, string
+
+// function isEven(n) {
+//     if (n % 2 === 0) return "even";
+//     return "odd";
+// }
+// console.log(isEven(4));
+// console.log(isEven(7));
+//answer: even ,odd
+
+
+// function joinStrings(a, b) {
+//     return a + " " + b;
+// }
+// console.log(joinStrings("Hello", "World"));
+// answer: Hello World
+
+
+// function lastElem(arr) {
+//     return arr[arr.length - 1];
+// }
+// console.log(lastElem([1, 2, 3, 4]));
+// console.log(lastElem([]));
+//answer: 4, kuch nahe
