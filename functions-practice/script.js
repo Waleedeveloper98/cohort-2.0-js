@@ -315,3 +315,35 @@
 // serviceCar("alto", carReady)
 
 
+
+let attempt = 0;
+let user = +prompt("Enter a number between 1-10:");
+let comp = 5;
+attempt++
+
+if (user === comp) {
+    console.log("You guesses it right");
+}
+while (user !== comp) {
+    attempt++;
+    user = prompt("Enter a number between 1-10:");
+    if (user === null) {
+        console.log("You pressed cancel");
+        break;
+    }
+    else if (user.trim() === "") {
+        alert("Please enter a number");
+        continue
+    }
+    else {
+        user = Number(user);
+        if (isNaN(user)) {
+            console.log("can't do it");
+        }
+    }
+
+    console.log("Try again");
+
+}
+console.log("You guessed it in " + attempt + " attempts")
+

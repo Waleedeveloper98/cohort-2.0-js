@@ -210,35 +210,31 @@
 // Else → print “Insufficient balance”
 
 
-let balance = 1000;
 let totalWithdrawals = 0;
-
+let balance = 1000;
 
 
 while (totalWithdrawals < 3) {
-    let withdrawalAmount = prompt(`Enter withdrawal amount your total balance is ${balance}`)
+    let withdrawal = prompt("Enter withdrawal amount")
     totalWithdrawals++
-    if (withdrawalAmount === null) {
-        console.error("You cancelled it")
+    if (withdrawal === null) {
+        console.error("you cancelled!")
         break
-    }
-    else if (withdrawalAmount.trim() === "") {
-        console.error("Invalid amount.")
+    } else if (withdrawal.trim() === "") {
+        console.error("input is empty!")
         break
+    } else {
+        withdrawal = Number(withdrawal)
+        if (isNaN(withdrawal)) {
+            console.error("input must be a number")
+            break;
+        } else if (withdrawal > balance) {
+            console.error("balance is low!")
+            break
+        } else {
+            balance -= withdrawal
+        }
     }
-    else if (isNaN(Number(withdrawalAmount))) {
-        console.error("Only numbers are valid")
-        break
-    }
-    else if (Number(withdrawalAmount) > balance) {
-         alert(`Your remaining balance is ${balance} so enter amount under your balance limit`)
-        continue
-    } else if (totalWithdrawals === 3) {
-        console.error("Your daily withdrawal limit is full")
-        break
-    }
-    else {
-        balance -= Number(withdrawalAmount)
-    }
+
 }
-console.log(`Your remaining balance is ${balance}`)
+console.log(balance)
