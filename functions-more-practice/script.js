@@ -84,3 +84,86 @@
 //     return str.length
 // }
 // console.log(getLength("Muhammad"))
+
+
+// level 1 guess the output
+
+// function sayHi() {
+//   console.log("Hi");
+// }
+// sayHi();
+//answer: Hi
+
+
+// function add(a, b) {
+//   return a + b;
+// }
+// console.log(add(2, 3));
+//answer: 5
+
+
+// function greet(name) {
+//   console.log("Hello " + name);
+// }
+// greet();
+//answer: Hello undefined
+
+
+// function test() {
+//     return;
+//     console.log("After return");
+// }
+// test();
+//answer: empty
+
+
+// function double(x) {
+//   return x * 2;
+// }
+// console.log(double());
+//answer: NaN
+
+
+// function show(a, b = 10) {
+//   console.log(a + b);
+// }
+// show(5);
+// show(5, 20);
+
+// answer: 15,25
+
+
+// console.log(square(3));
+// function square(n) {
+//   return n * n;
+// }
+
+// answer: it is function declearation so function will be fully hoisted console will run here output will be 9
+
+
+// console.log(multiply(2, 3));
+
+// var multiply = function (a, b) {
+//     return a * b;
+// };
+
+//answer: it is function expression so function will not fully hoisted only variable will be hoisted multiply will be so it will give error multiply is not a function
+
+// function outer() {
+//     let x = 5;
+//     function inner() {
+//         console.log(x);
+//     }
+//     inner();
+// }
+// outer();
+// answer: it will print 5 because x is accessable in full function 
+
+// let a = 10;
+// function printA() {
+//     let a = 20;
+//     console.log(a);
+// }
+// printA();
+// console.log(a);
+//answer: printA() print 20 aur log a print 10 because a = 10 is in global scope and a = 20 in function scope so both are different
