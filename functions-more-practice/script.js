@@ -346,3 +346,170 @@
 //     return arr[arr.length - 1]
 // }
 // console.log(lastElem(1, 2, 3, 4, 5, 3))
+
+
+
+// LEVEL 3 — GUESS THE OUTPUT (Closures & HOFs)
+// function makeCounter() {
+//     let count = 0;
+//     return function () {
+//         count += 1;
+//         console.log(count);
+//     }
+// }
+// const c = makeCounter();
+// c();
+// c();
+//1,2
+
+
+// function outer() {
+//     let x = 1;
+//     return function () {
+//         console.log(x);
+//     }
+// }
+// const a = outer();
+// const b = outer();
+// a();
+// b();
+//answer: both 1 kyuki dono seperate scope hold krte hain
+
+
+// function add(a) {
+//     return function (b) {
+//         return a + b;
+//     }
+// }
+// console.log(add(2)(3));
+//answer: 5
+
+
+
+// var funcs = [];
+// for (var i = 0; i < 3; i++) {
+//     funcs.push(function () {
+//          console.log(i); 
+//         });
+// }
+// funcs[0]();
+// funcs[1]();
+// funcs[2]();
+
+// let funcs2 = [];
+// for (let i = 0; i < 3; i++) {
+//     funcs2.push(function () { console.log(i); });
+// }
+// funcs2[0]();
+// funcs2[1]();
+// funcs2[2]();
+
+
+
+// function once(fn) {
+//     let called = false;
+//     return function () {
+//         if (!called) {
+//             called = true;
+//             return fn();
+//         }
+//         return undefined;
+//     }
+// }
+// const say = once(() => console.log("Run"));
+// say();
+// say();
+
+
+
+// function counterFactory() {
+//     let n = 0;//2
+//     return {
+//         inc() { n++; console.log(n); },//2
+//         dec() { n--; console.log(n); }//1
+//     }
+// }
+// const cf = counterFactory();
+// cf.inc();//1
+// cf.inc();//2
+// cf.dec();//1
+
+
+
+// function compose(f, g) {
+//     return function (x) {
+//         return f(g(x));
+//     }
+// }
+// const double = x => x * 2;
+// const square = x => x * x;
+// const f = compose(square, double);
+// console.log(f(3));
+
+
+// function outerVal(v) {
+//     return function () {
+//         console.log(v);
+//     }
+// }
+// const arr = [];
+// for (var i = 0; i < 2; i++) {
+//     arr.push(outerVal(i));
+// }
+// arr[0]();
+// arr[1]();
+
+
+// function map(arr, fn) {
+//     const out = [];
+//     for (let i = 0; i < arr.length; i++) {
+//         out.push(fn(arr[i], i));
+//     }
+//     return out;
+// }
+// console.log(map([1, 2, 3], (n, i) => n + i));
+
+
+// function delayedLogger(msg) {
+//   setTimeout(function(){ console.log(msg); }, 0);
+// }
+// delayedLogger("Hello");
+// console.log("World");
+
+
+// function counter() {
+//     let i = 0;
+//     return function step() {
+//         i++;
+//         if (i === 3) return;
+//         console.log(i);
+//         step();
+//     }
+// }
+// counter()();
+
+
+
+// const a = (function(){
+//   let secret = 42;
+//   return {
+//     get() { return secret; },
+//     set(v) { secret = v; }
+//   };
+// })();
+// console.log(a.get());
+// a.set(100);
+// console.log(a.get());
+
+
+// function curry3(fn) {
+//     return function (a) {
+//         return function (b) {
+//             return function (c) {
+//                 return fn(a, b, c);
+//             }
+//         }
+//     }
+// }
+// function sum(a, b, c) { return a + b + c; }
+// console.log(curry3(sum)(1)(2)(3));
