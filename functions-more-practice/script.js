@@ -157,7 +157,7 @@
 //     inner();
 // }
 // outer();
-// answer: it will print 5 because x is accessable in full function 
+// answer: it will print 5 because x is accessable in full function
 
 // let a = 10;
 // function printA() {
@@ -233,7 +233,7 @@
 // }
 // console.log(sayMsg());
 // console.log(typeof msg);
-//answer: andar return hai toh bahir console ho ga Hello, string
+//answer: andar return hai toh bahir console ho ga Hello, undefined
 
 // function isEven(n) {
 //     if (n % 2 === 0) return "even";
@@ -256,4 +256,93 @@
 // }
 // console.log(lastElem([1, 2, 3, 4]));
 // console.log(lastElem([]));
-//answer: 4, kuch nahe
+//answer: 4, undefined
+
+
+// 1️⃣ Ek variable x global banao, aur ek function printX likho jo use kare.
+// let x = 12;
+// function printX() {
+//     console.log(x)
+// }
+// printX()
+
+
+// 2️⃣ Ek function likho subtract(a,b) jo a–b return kare, aur console mein "Result: <value>" print kare.
+
+// function subtract(a,b){
+//     return a -b
+// }
+// console.log(`Result: ${subtract(10,4)}`)
+
+// 3️⃣ Ek function likho jisme b=10 default value ho aur a argument user de.
+
+// function abc(a, b = 10) {
+//     console.log(a,b)
+// }
+// abc(32, 12)
+// abc(32)
+
+//4️⃣ Ek function likho jo kisi bhi number of arguments le aur unka total print kare (use rest parameter ...nums).
+
+// function getTotal(...nums) {
+//     let sum = 0;
+//     for(let i = 0; i<nums.length; i++){
+//         sum += nums[i]
+//     }
+//     console.log(sum)
+// }
+// getTotal(1, 2, 3, 4, 5)
+
+
+// 5️⃣ Ek function likho jo sirf first 2 arguments use kare aur baaki ignore kare.
+
+// function ignore(a, b) {
+//     console.log(a, b)
+// }
+// ignore(1, 2, 3, 4)
+
+
+//6️⃣ Ek function likho jo ek variable ke andar dusra function define kare aur dono ko call karo.
+
+// function outer(){
+//     let a = 10;
+//     function inner(){
+//         console.log(a)
+//     }
+//     inner()
+// }
+// outer()
+
+
+//7️⃣ Ek function likho jo ek variable msg define kare aur usko return kare.
+
+// function getMsg(){
+//     let msg = "Hello"
+//     return msg
+// }
+// console.log(getMsg())
+// console.log(typeof msg)
+
+//8️⃣ Ek function likho jo ek number le aur check kare ke wo even hai ya odd.
+
+// function checkType(n){
+//    return n % 2 === 0 ? "even": "odd"
+// }
+// console.log(checkType(32))
+// console.log(checkType(3421))
+
+
+// 9️⃣ Ek function likho jo 2 strings concatenate karke return kare.
+
+// function concatStr(str1,str2,str3){
+//     return str1.concat(str2,str3)
+// }
+// console.log("Hello","World","Js")
+
+
+// 🔟 Ek function likho jo kisi bhi array ka last element return kare. 
+
+// function lastElem(...arr) {
+//     return arr[arr.length - 1]
+// }
+// console.log(lastElem(1, 2, 3, 4, 5, 3))
