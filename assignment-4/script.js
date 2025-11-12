@@ -112,3 +112,130 @@
 // setTimeout(()=>{
 //     console.log("Time's up!");
 // },2000)
+
+
+
+//Level 2 - Functional Thinking & Logic tasks
+
+// 1.Write a higher-order-function runTwice(fn) that takes another function and execute it two times.
+
+// function runTwice(fn){
+//     fn()
+//     fn()
+// }
+// runTwice(function(){
+//     console.log("run")
+// })
+
+//2.Create one pure function that always returns the same output for a give input, and one impure function using a global variable.
+
+// function pure(n){
+//     console.log(n + 10)
+// }
+// pure(5)
+// pure(5)
+
+// function impure(n){
+//     console.log(Math.random() + n)
+// }
+// impure(5)
+// impure(5)
+
+
+// let a = 10;
+// function impuree(){
+//     a++
+//     console.log(a)
+// }
+// impuree()
+
+
+// 3. Write a function that uses object destructuring inside parameters to extract and print name and age
+
+// function person({ name, age }) {
+//     console.log(name, age)
+// }
+// person({ name: "Waleed", age: 22 })
+
+
+//4.Demonstrate the difference between normal funciton and arrow funciton wien used as object methods (the this issue)
+
+// let user = {
+//     name: "Waleed",
+//     sayHi: function(){
+//         console.log(`Hi ${this.name}`)
+//     }
+// }
+// user.sayHi()
+//this point to method which is object
+
+let user = {
+    name: "Waleed",
+    sayHi: ()=>{
+        console.log(`Hi ${this.name}`)
+    }
+}
+user.sayHi()
+//this point to the window
+
+
+//5.Given an array of numbers use map(), to create a new array where each number is squared.
+
+// let nums = [1, 2, 3, 4, 5];
+// let newArr = nums.map((n)=>{
+//     return n * n
+// })
+// console.log(newArr);
+
+// 6.use filter to get only even numbers from an array.
+
+// let arr = [1, 2, 43, 1, 21, 2, 43, 4, 2, 6, 7, 45, 87]
+// let evens = arr.filter((n)=> n % 2 === 0)
+// console.log(evens)
+
+// 7. use reduce to find the total salary from an array of numbers
+// let salaries = [10000, 32400, 54000, 23000]
+// let total = salaries.reduce((total, val) => total + val, 0)
+// console.log(total)
+
+//8.create an array of names and use some()and every to test a condition (e.g all names longer than 3 chars).
+
+// let names = ["Arif", "Bilal", "Danish", "Faisal", "Imran"]
+// console.log(names.some((name)=>{
+//     return name.length > 3
+// }))
+
+// console.log(names.every((name)=>{
+//     return name.length > 3
+// }))
+
+
+// 9.create an object user and test the behavior of object.freeze() and object.seal() by adding/changing keys.
+
+// let user = {
+//     name: "Waleed",
+//     age: 22
+// }
+// Object.freeze(user)
+// user.age = 23
+// console.log(user)
+
+// let user = {
+//     name: "Waleed",
+//     age: 22
+// }
+// Object.seal(user)
+// user.age = 23
+// console.log(user)
+
+
+// 10. create a nested object (user > address > city) and access the city name inside it.
+
+// let obj = {
+//     name: "Waleed",
+//     address: {
+//         city: "Islamabad"
+//     }
+// }
+// console.log(obj);
+// console.log(obj.address.city)
