@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    cursor: none;
+}
+
+main {
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+}
+
+#cursor {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    transform: translate(-50%, -50%);
+    z-index: 9999999999999;
+}
