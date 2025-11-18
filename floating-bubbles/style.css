@@ -1,0 +1,43 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: poppins, sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    border: 10px solid lime;
+}
+
+.bubble {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale, 1));
+  will-change: transform, opacity;
+  box-shadow: 0 0 14px currentColor;
+  animation: floatUp 1s ease forwards;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translate(-50%, -50%) scale(var(--scale, 1));
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -100%) scale(0);
+    opacity: 0;
+    filter: blur(1px);
+  }
+}
